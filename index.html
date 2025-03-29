@@ -15,6 +15,11 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">Shreshthacoder</div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About Me</a>
@@ -80,8 +85,6 @@
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>
         </div>
-        <button class="slider-btn prev">&lt;</button>
-        <button class="slider-btn next">&gt;</button>
     </section>
 
     <!-- Footer -->
@@ -110,8 +113,36 @@
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 3000,
-                prevArrow: $('.prev'),
-                nextArrow: $('.next')
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            dots: true,
+                            arrows: false
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+    <!-- Add this before the closing body tag -->
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
             });
         });
     </script>

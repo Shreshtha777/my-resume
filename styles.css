@@ -107,13 +107,14 @@ nav {
     padding: 5% 10%;
     text-align: center;
     position: relative;
+    overflow: hidden;
 }
 
 .testimonial-slider {
     max-width: 800px;
     margin: 2rem auto;
     position: relative;
-    padding: 0 50px;
+    padding: 0;
 }
 
 .testimonial-card {
@@ -134,26 +135,7 @@ nav {
 }
 
 .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #6c63ff;
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.prev {
-    left: 570px;
-}
-
-.next {
-    right: 570px;
+    display: none;
 }
 
 /* Slick Slider Custom Styles */
@@ -183,22 +165,209 @@ footer {
     color: #666;
 }
 
-/* Responsive Design */
+/* Additional breakpoint for smaller devices */
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .testimonial-card img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Add these styles for the hamburger menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Update the mobile styles */
 @media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        z-index: 100;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: white;
+        padding: 80px 20px;
+        transition: 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+
+    /* Hamburger animation classes */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Hero Section */
     .hero {
         flex-direction: column;
         text-align: center;
+        padding: 3% 5%;
+        min-height: auto;
+    }
+
+    .hero-content {
+        margin-bottom: 2rem;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    /* Skills Section */
+    #skills {
+        padding: 3% 5%;
     }
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 
+    .skill-icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* About Section */
     #about {
         flex-direction: column;
+        padding: 3% 5%;
+        text-align: center;
+    }
+
+    .about-image {
+        margin-bottom: 2rem;
+    }
+
+    .about-image img {
+        max-width: 80%;
+    }
+
+    /* Testimonials Section */
+    #testimonials {
+        padding: 3% 5%;
+    }
+
+    .testimonial-slider {
+        max-width: 100%;
+        padding: 0;
+        margin: 2rem auto;
+    }
+
+    .testimonial-card {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1rem;
+    }
+
+    .social-links a {
+        margin: 0 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    /* Update container paddings */
+    .hero, #skills, #about, #testimonials {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Override any Slick slider inline styles */
+    .slick-list {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+}
+
+/* Additional fixes for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
     }
 
     .nav-links {
-        display: none;
+        width: 85%;
     }
+}
+
+/* Add these base styles at the top of your CSS file */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Add these Slick slider overrides */
+.slick-slider {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.slick-list {
+    margin: 0;
+    padding: 0 !important;
+}
+
+.slick-slide {
+    padding: 0 10px;
+    box-sizing: border-box;
 } 
