@@ -1,0 +1,204 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8fbff;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: white;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 1rem;
+}
+
+.contact-btn {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10%;
+    min-height: 80vh;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 80%;
+}
+
+.highlight {
+    color: #6c63ff;
+}
+
+.get-in-touch {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* Skills Section */
+#skills {
+    padding: 5% 10%;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* About Section */
+#about {
+    display: flex;
+    align-items: center;
+    padding: 5% 10%;
+    background-color: white;
+}
+
+.about-image img {
+    max-width: 100%;
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 5% 10%;
+    text-align: center;
+    position: relative;
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+    padding: 0 50px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 0 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #6c63ff;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 570px;
+}
+
+.next {
+    right: 570px;
+}
+
+/* Slick Slider Custom Styles */
+.slick-dots li button:before {
+    color: #6c63ff;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #6c63ff;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.social-links a {
+    color: #333;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    margin-top: 1rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #about {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        display: none;
+    }
+} 
