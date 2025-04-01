@@ -135,15 +135,18 @@ nav {
 
 /* About Section */
 #about {
-    gap: 250px;
+    gap: 370px;
     display: flex;
     align-items: center;
     padding: 5% 10%;
     background-color: white;
+    font-size: 20px;
 }
 
+
+
 .about-image img {
-    max-width: 100%;
+    max-width: 450%;
 }
 
 /* Testimonials Section */
