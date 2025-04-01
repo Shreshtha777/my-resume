@@ -24,13 +24,6 @@ nav {
     text-decoration: none;
     color: #333;
     margin: 0 1rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #6c63ff;
 }
 
 .contact-btn {
@@ -54,27 +47,40 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 5% 10%;
-    min-height: 80vh;
-    gap: 2rem;
+    min-height: 90vh;
+    gap: 4rem;
+    background-color: white;
+    overflow: hidden;
 }
 
 .hero-content {
-    flex: 1;
+    flex: 0.8;
+    z-index: 2;
+    max-width: 500px;
 }
 
 .hero-image {
-    flex: 1;
-    text-align: right;
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
 }
 
 .hero-image img {
-    max-width: 90%;
+    width: 100%;
+    max-width: 700px;
     height: auto;
     object-fit: contain;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(108, 99, 255, 0.2));
 }
 
 .highlight {
     color: #6c63ff;
+    display: inline-block;
 }
 
 .get-in-touch {
@@ -119,7 +125,7 @@ nav {
 }
 
 .skill-icon p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #6c63ff;
     margin: 0;
     font-weight: 700;
@@ -129,80 +135,20 @@ nav {
 
 /* About Section */
 #about {
+    gap: 250px;
     display: flex;
     align-items: center;
     padding: 5% 10%;
     background-color: white;
-    gap: 4rem;
-}
-
-.about-content {
-    flex: 1;
-}
-
-.about-image {
-    flex: 1;
 }
 
 .about-image img {
     max-width: 100%;
 }
 
-.about-content h2 {
-    margin-bottom: 1.5rem;
-    color: #333;
-}
-
-.about-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #666;
-}
-
 /* Testimonials Section */
-#testimonials {
-    padding: 5% 10%;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
 
-.testimonial-slider {
-    max-width: 800px;
-    margin: 2rem auto;
-    position: relative;
-    padding: 0;
-}
 
-.testimonial-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    margin: 0 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.testimonial-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin: 0 auto 1rem auto;
-    display: block;
-}
-
-.slider-btn {
-    display: none;
-}
-
-/* Slick Slider Custom Styles */
-.slick-dots li button:before {
-    color: #6c63ff;
-}
-
-.slick-dots li.slick-active button:before {
-    color: #6c63ff;
-}
 
 /* Footer */
 footer {
@@ -369,7 +315,6 @@ footer {
     .nav-links a {
         margin: 15px 0;
         font-size: 1.2rem;
-        font-weight: 700;
     }
 
     /* Hamburger animation classes */
@@ -388,19 +333,19 @@ footer {
     /* Hero Section */
     .hero {
         flex-direction: column;
-        text-align: center;
-        padding: 3% 5%;
+        padding: 2rem 5%;
         min-height: auto;
-        gap: 1rem;
+        gap: 2rem;
     }
 
-    .hero-content {
-        margin-bottom: 1rem;
+    .hero-image {
+        width: 100%;
+        padding: 0;
     }
 
     .hero-image img {
-        max-width: 100%;
-        margin-top: 1rem;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     /* Skills Section */
@@ -428,11 +373,10 @@ footer {
         flex-direction: column;
         padding: 3% 5%;
         text-align: center;
-        gap: 2rem;
     }
 
     .about-image {
-        margin-bottom: 0;
+        margin-bottom: 2rem;
     }
 
     .about-image img {
@@ -574,10 +518,6 @@ html, body {
 
 .portfolio-overlay h3 {
     margin-bottom: 0.5rem;
-}
-
-.portfolio-overlay p {
-    font-size: 1.1rem;
 }
 
 /* Add this to your existing media queries */
@@ -778,19 +718,6 @@ html, body {
     color: #666;
 }
 
-.contact-details a {
-    text-decoration: none;
-}
-
-.contact-details a p {
-    color: #666;
-    transition: color 0.3s ease;
-}
-
-.contact-details a:hover p {
-    color: #6c63ff;
-}
-
 .contact-form {
     flex: 1.5;
 }
@@ -805,7 +732,7 @@ html, body {
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: border-color 0.3s ease;
 }
 
@@ -827,7 +754,7 @@ html, body {
     padding: 1rem 2rem;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
     position: relative;
     display: flex;
@@ -898,16 +825,72 @@ html, body {
     }
 }
 
-/* Add typing animation styles */
-.typing-animation {
-    display: inline-block;
+/* Update Hero Section font sizes */
+.hero-content h4 {
+    font-size: 1.2rem;  /* Reduced from 1.4rem */
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;  /* Reduced from 3rem */
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;  /* Reduced from 2rem */
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.hero-content p {
+    font-size: 1.1rem;  /* Reduced from 1.2rem */
+    margin-bottom: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Add Typing Animation Styles */
+.typing {
     position: relative;
-    border-right: 2px solid #6c63ff;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3.5s steps(30, end), 
-               blink 0.75s step-end infinite;
+    display: inline-block;
     width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #6c63ff;
+    animation: typing 3s steps(30) forwards,
+               blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -920,144 +903,22 @@ html, body {
     50% { border-color: #6c63ff }
 }
 
+/* Update highlight class */
+.highlight {
+    color: #6c63ff;
+}
+
+/* Remove old animation classes */
+.typewriter,
+.typing-animation {
+    display: none;
+}
+
 /* Mobile responsiveness for typing animation */
 @media (max-width: 768px) {
-    .typing-animation {
+    .typing {
         border-right: none;
-        animation: typing 3s steps(30, end);
+        width: auto;
+        animation: typing 3s steps(30) forwards;
     }
 }
-
-/* Update font sizes */
-/* Hero Section */
-.hero-content h4 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-}
-
-.hero-content h2 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.hero-content p {
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-}
-
-/* Section Headings */
-#skills h2,
-#about h2,
-#portfolio h2,
-#experience h2,
-#contact h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-}
-
-/* About Section */
-.about-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
-
-/* Skills Section */
-.skill-icon p {
-    font-size: 1.2rem;
-}
-
-/* Portfolio Section */
-.portfolio-overlay h3 {
-    font-size: 1.4rem;
-}
-
-.portfolio-overlay p {
-    font-size: 1.1rem;
-}
-
-/* Experience/Education Section */
-.timeline-content h3 {
-    font-size: 1.4rem;
-}
-
-.timeline-content h4 {
-    font-size: 1.2rem;
-}
-
-.timeline-content p {
-    font-size: 1.1rem;
-}
-
-/* Contact Section */
-.contact-details h3 {
-    font-size: 1.3rem;
-}
-
-.contact-details p {
-    font-size: 1.1rem;
-}
-
-/* Form Elements */
-.form-group input,
-.form-group textarea {
-    font-size: 1.1rem;
-}
-
-.submit-btn {
-    font-size: 1.2rem;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .hero-content h4 {
-        font-size: 1.4rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    #skills h2,
-    #about h2,
-    #portfolio h2,
-    #experience h2,
-    #contact h2 {
-        font-size: 2.4rem;
-    }
-
-    .about-content p {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-content h2 {
-        font-size: 1.8rem;
-    }
-
-    #skills h2,
-    #about h2,
-    #portfolio h2,
-    #experience h2,
-    #contact h2 {
-        font-size: 2rem;
-    }
-} 
